@@ -1,0 +1,11 @@
+**
+!api.py
+!app.py
+!fraudguard_score.py
+!requirements-api.txt
+!requirements-ui.txt
+!models/
+!models/fraudguard_model.joblib
+!models/fraudguard_meta.json
+!examples/
+!examples/demo_transactions.csv

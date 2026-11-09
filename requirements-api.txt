@@ -1,0 +1,11 @@
+fastapi==0.115.14
+uvicorn==0.34.3
+pydantic==2.11.7
+python-dotenv==1.1.1
+joblib==1.5.3
+numpy==2.3.5
+pandas==2.2.3
+scikit-learn==1.8.0
+# CPU-only wheel keeps the Render image free of GPU dependencies.
+xgboost-cpu==3.4.1; platform_system == "Linux" and platform_machine == "x86_64"
+xgboost==3.4.1; platform_system != "Linux" or platform_machine != "x86_64"

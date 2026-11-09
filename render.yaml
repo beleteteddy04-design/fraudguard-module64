@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: fraudguard-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.api
+    dockerContext: .
+    healthCheckPath: /health
+
+  - type: web
+    name: fraudguard-ui
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.streamlit
+    dockerContext: .
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: FRAUDGUARD_API_URL
+        fromService:
+          type: web
+          name: fraudguard-api
+          envVarKey: RENDER_EXTERNAL_URL
